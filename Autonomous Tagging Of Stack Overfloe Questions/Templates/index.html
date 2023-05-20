@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag predictor</title>
+    <style>
+        body{
+            height: 100vh;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            background-image:url(/static/static.jpg);
+            background-position: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ind{
+            border: 2px ;
+            padding: 50px;
+            background-color:rgb(240, 235, 235);
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            box-shadow: 2px 2px 20px black;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .tagh{
+            text-align: center;
+            margin-bottom: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: 3px;
+            font-weight: bolder;
+            font-size: larger;
+            color: blue;
+        }
+        textarea{
+            border-radius: 10px 30px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .btn{
+            border: none;
+            display: flex;
+            justify-content: center;
+            padding: 4px 30px;
+            border-radius: 5px;
+            background:linear-gradient(to right,rgb(69, 205, 255),rgb(0, 0, 255));
+            color: rgb(255, 255, 255);
+        }
+        textarea:hover{
+            border-left: 5px solid rgb(52, 208, 255);
+            border-bottom: 5px solid rgb(52, 208, 255);
+            border-top: 5px solid rgb(55, 97, 213);
+            border-right: 5px solid rgb(55, 97, 213);
+            transition-duration: .6s;
+        }
+        .btn:hover{
+            background:linear-gradient(to right,rgb(0, 0, 255),rgb(69, 205, 255));
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class = "ind">
+    <div class = "tagh">TAG PREDICTOR</div>
+    <div class = "cont">
+        <form action = "{{url_for('predict')}}" method = "post">
+            <textarea name = "question" style = "outline: none;" placeholder="Enter your query......" rows = "6" cols="50" required></textarea>
+            <br/>
+            <input type = "submit" class = "btn" value = "submit">
+        </form>
+    </div>
+    </div>
+</body>
+</html>
